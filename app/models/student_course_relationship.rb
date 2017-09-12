@@ -1,0 +1,2 @@
+class StudentCourseRelationship < ApplicationRecord
+end
