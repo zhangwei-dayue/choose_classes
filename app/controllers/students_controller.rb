@@ -9,7 +9,8 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
-    @courses = @student.courses.include(:teacher)
+    # @courses = @student.courses.include(:teacher)
+    render json: @student.to_json(:include => {:courses => {:include => :teacher }})
   end
 
   private
